@@ -15,7 +15,7 @@ var codes = map[int]string{}
 
 func NewError(code int, msg string) *Error {
 	if _, ok := codes[code]; ok {
-		panic(fmt.Sprintf("%錯誤 %d 已經存在, 請更換一個", code))
+		panic(fmt.Sprintf("錯誤 %d 已經存在, 請更換一個", code))
 	}
 	codes[code] = msg
 	return &Error{code: code, msg: msg}

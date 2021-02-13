@@ -1,11 +1,13 @@
 package global
 
 import (
-	"github.com/go-programming-tour-book/blog-service/pkg/setting"
+	"github.com/baconYao/gin-blog/pkg/logger"
+	"github.com/baconYao/gin-blog/pkg/setting"
 )
 
 var (
 	ServerSetting   *setting.ServerSettingS
 	AppSetting      *setting.AppSettingS
 	DatabaseSetting *setting.DatabaseSettingS
+	Logger          *logger.Logger
 )
