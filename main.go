@@ -28,6 +28,10 @@ func init() {
 	}
 }
 
+// @title Yao 的部落格
+// @version 1.0
+// @description 用 Go 語言實作個人部落格
+// @termsOfService https://github.com/baconYao/gin-blog
 func main() {
 	global.Logger.Infof("%s: yao-gin-blog/%s", "BaconYao", "gogo")
 	router := routers.NewRouter()

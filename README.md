@@ -82,3 +82,7 @@ create table `blog_article_tag` (
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Link between article and tag';
 ```
+
+## How to regenerate Swagger API Doc?
+
+After `go get`, typing `swag init` at your terminal, you will get an updated *docs* folder

@@ -1,8 +1,14 @@
 package routers
 
 import (
+	"fmt"
+
+	_ "github.com/baconYao/gin-blog/docs"
+	"github.com/baconYao/gin-blog/global"
 	v1 "github.com/baconYao/gin-blog/internal/routers/api/v1"
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 // NewRouter generates the api routes
@@ -10,6 +16,9 @@ func NewRouter() *gin.Engine {
 	r := gin.New()
 	r.Use(gin.Logger())
 	r.Use(gin.Recovery())
+	// Route of Swagger API Doc
+	url := ginSwagger.URL(fmt.Sprintf("http://127.0.0.1:%s/swagger/doc.json", global.ServerSetting.HttpPort))
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
 
 	article := v1.NewArticle()
 	tag := v1.NewTag()
